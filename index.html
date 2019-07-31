@@ -13,27 +13,17 @@
   <!--Open Graph meta tags-->
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="site-name">
-  <meta property="og:title" content="title">
-  <meta property="og:description" content="descr">
-  <meta property="og:url" content="#">
-  <meta property="og:image" content="#">
-
 
   <!--Shortcut icon & Favicons-->
 
-  <link rel="shortcut icon" href="#">
-  <link rel="apple-touch-icon" href="img/favicon/...">
-  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/...">
-  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/...">
-
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
 
   <!--Mobile browswers theme color-->
 
   <meta name="theme-color" content="#FD8755">
   <meta name="msapplication-navbutton-color" content="#FD8755">
   <meta name="apple-mobile-web-app-status-bar-style" content="#FD8755">
-
 
   <!--Add CSS & Fonts-->
 
@@ -44,6 +34,39 @@
 </head>
 <body>
 
+<div class="contacts-menu">
+  <div class="contacts-menu__button">
+    Показать контакты
+  </div>
+    <ul class="contacts-menu__list">
+      <li class="contacts-menu__item">
+        <a href="mailto:glowline@mail.ru">
+          <span class="icon _email"></span>
+          <span class="contacts-menu__item-text">glowline@mail.ru</span>
+        </a>
+      </li>
+      <li class="contacts-menu__item">
+        <a href="tel:79168373667">
+          <span class="icon _phone"></span>
+          <span class="contacts-menu__item-text">+7 (916) 837-36-67</span>
+        </a>
+      </li>
+      <li class="contacts-menu__item">
+        <a href="https://www.instagram.com/walik_savitsky/" target="_blank">
+          <span class="icon _instagram">instagram</span> 
+          <span class="contacts-menu__item-text">Instagram</span>
+          <span class="contacts-menu__goto icon _goto"></span>
+        </a>
+      </li>
+      <li class="contacts-menu__item">
+        <a href="https://vk.com/w.savitsky" target="_blank">
+          <span class="icon _vk">Вконтакте</span>
+          <span class="contacts-menu__item-text">Вконтакте</span>
+          <span class="contacts-menu__goto icon _goto"></span>
+        </a>
+      </li>
+    </ul>
+</div>
 
 
   <header class="page-header">
@@ -68,7 +91,7 @@
         <div class="page-header__title">
           я в соцсетях
         </div>
-        <a class="icon _vk" href="https://vk.com/w.savitsky" target="_blank">vk.com</a>
+        <a class="icon _vk" href="https://vk.com/w.savitsky" target="_blank">Вконтакте</a>
         <a class="icon _instagram" href="https://www.instagram.com/walik_savitsky/" target="_blank">instagram</a> 
       </div>
     </div>
@@ -77,6 +100,7 @@
   <section class="s1">
     <div class="about">
       <div class="about__header">
+        <div class="transparent-bg"></div>
         <div class="container">
           <div class="about__logo">
             <img src="img/my_logo.svg" alt="logo">
@@ -111,7 +135,7 @@
         <div class="container">
           <p class="about__case-descr">
             <span>Профессионально занимаюсь графическим дизайном  с 2006 года.</span> 
-            Имею <a href="#s2">опыт работы </a>во многих областях профессии, в том числе:
+            Имею <a class="scroll-button" href="#s2">опыт работы </a>во многих областях профессии, в том числе:
           </p>
           <ul class="about__case-list">
             <li class="about__case-list-item">
@@ -242,7 +266,7 @@
           </h2>
 
           <p class="stack__descr">
-            ОС Windows, Adobe Photoshop, CorelDRAW, Adobe Illustrator, Adobe  After Effects, MS PowerPoint, MS Word, чувство прекрасного, здравый смысл.
+            ОС&nbsp;Windows, Adobe Photoshop, CorelDRAW, Adobe Illustrator, Adobe After Effects, MS&nbsp;PowerPoint, MS&nbsp;Word, чувство прекрасного, здравый смысл.
           </p>
         </div>  
         
@@ -284,6 +308,20 @@
  
   
   <!--Add scripts-->
-  <script src="js/common.js"></script>	
+  <script>
+    $(document).ready(function() {
+      $('body').on('click', '.contacts-menu__button', function() {
+        $(this).toggleClass('_open');
+        $('.contacts-menu__list').slideToggle(300);
+      });
+
+      $('body').on('click', '.scroll-button', function() {
+        $([document.documentElement, document.body]).animate({
+          scrollTop: $('#s2').offset().top
+        }, 1000);
+      });
+    });
+    
+  </script>	
 </body>
 </html>
