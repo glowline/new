@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
    ym(54683509, "init", {
         clickmap:true,
         trackLinks:true,
@@ -84,7 +83,7 @@
 </div>
 
 
-  <header class="page-header">
+  <header class="page-header" id="topdest">
     <div class="page-header__inner">
       <div class="page-header__contacts">
         <div class="page-header__title">
@@ -203,7 +202,7 @@
             </div>
             <div class="experience__item-descr">
               <strong class="mobile-not">Брэнд</strong>
-              <strong class="mobile-only">РК «Брэнд»</strong>
+              <strong class="mobile-only light">РК «Брэнд»</strong>
               <span class="mobile-not">(наружная реклама и полиграфия)<br></span>
               <span class="mobile-not">Должность: </span> 
               <strong>дизайнер / печатник</strong>, 
@@ -218,7 +217,7 @@
             </div>
             <div class="experience__item-descr">
               <strong class="mobile-not">Лист</strong> 
-              <strong class="mobile-only">РК «Лист»</strong> 
+              <strong class="mobile-only light">РК «Лист»</strong> 
               <span class="mobile-not">(рекламно-сувенирная продукция)<br></span>
               <span class="mobile-not">Должность: </span> 
               <strong>дизайнер</strong>, 
@@ -233,7 +232,7 @@
             </div>
             <div class="experience__item-descr">
               <strong class="mobile-not">Торговый дом Теско</strong> 
-              <strong class="mobile-only">Торговый дом «Теско»</strong>
+              <strong class="mobile-only light">Торговый дом «Теско»</strong>
               <span class="mobile-not">(текстильная продукция)<br></span>
               <span class="mobile-not">Должность: </span> 
               <strong>дизайнер</strong>, 
@@ -247,7 +246,7 @@
               <img src="img/ivengo_logo.svg" alt="iVengo Mobile">
             </div>
             <div class="experience__item-descr">
-              <strong>iVengo Mobile</strong> 
+              <strong class="light">iVengo Mobile</strong> 
               <span class="mobile-not">(мобильная реклама)<br></span>
               <span class="mobile-not">Должность: </span> 
               <strong>дизайнер</strong>, 
@@ -316,6 +315,8 @@
         <div class="page-footer__right-col">
           © 2019 glowline.ru
         </div>
+
+        <div class="button-top"></div>
       </div>  
     </div>
   </footer>
@@ -333,6 +334,18 @@
       $('body').on('click', '.scroll-button', function() {
         $([document.documentElement, document.body]).animate({
           scrollTop: $('#s2').offset().top
+        }, 1000);
+      });
+
+      $('body').on('click', '.button-top', function() {
+        $([document.documentElement, document.body]).animate({
+          scrollTop: $('#topdest').offset().top
+        }, 1000);
+      });
+
+      $('body').on('click', '.stack__logo', function() {
+        $([document.documentElement, document.body]).animate({
+          scrollTop: $('#topdest').offset().top
         }, 1000);
       });
     });
